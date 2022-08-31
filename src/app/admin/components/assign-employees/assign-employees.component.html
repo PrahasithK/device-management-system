@@ -1,0 +1,55 @@
+
+<div class="container-fluid main">
+    <div class="row">
+        <div class="col-lg-12 table">
+            <div class="card">
+                <div class="card-body">
+                    <h4>Assign Employee</h4>
+                    <!-- form -->
+                    <form [formGroup]="assignEmployeeForm">
+                        <div>
+                            <label>Name :</label>
+                            <input type=" text" class="form-control" formControlName="name" placeholder="Enter Name">
+                           
+                        </div><br />
+
+                        <div>
+                            <label>Email:</label>
+                            <input type="text" class="form-control" formControlName="email" placeholder="Enter Email">
+                           
+                        </div><br />
+                        <div>
+                            <label>Phone Number :</label>
+                            <input type="text" class="form-control" formControlName="phone_number"
+                                placeholder="Enter Phone Number">
+                           
+                        </div><br />
+                        <div>
+                            <label>Designation :</label>
+                            <input type="text" class="form-control" formControlName="designation"
+                                placeholder="Enter Designation">
+                           
+                        </div><br />
+
+                        <div>
+                            <label>Device Type :</label>
+                            <input type="text" class="form-control" formControlName="devices" placeholder="Enter Devices">
+                           
+                        </div><br/>
+                        
+                        
+                        <div style="float: right;">
+                            <button (click)="updateemployee()"  class="btn btn-primary submit">Submit</button>
+                            <button (click)="cancel()"  class="btn btn-secondary">Cancel</button>
+                        </div>
+
+                        <!-- <p class="text-error">{{error}}</p> -->
+                    </form>
+                    <!-- end form -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-sidebarnav></app-sidebarnav>
+

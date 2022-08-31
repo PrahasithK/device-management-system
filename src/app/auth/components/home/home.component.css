@@ -1,0 +1,42 @@
+.heading{
+    margin-left: 80px;
+}
+
+.middle_path {
+    display: flex;
+    align-items: center;
+    padding: 45px;
+}
+
+
+.development {
+    font-family: Poppins-Bold1;
+    width: 100%;
+    line-height: 64px;
+    font-size: 54px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.para {
+    font-family: 'Poppins';
+    font-size: 15px;
+    line-height: 30px;
+    position: relative;
+    z-index: 0;
+    font-weight: 400;
+}
+
+.get_connect {
+    border: 0px;
+    background-color: orange;
+    width: 200px;
+    height: 60px;
+    border-radius: 30px;
+    color: white;
+    font-size: 23px;
+
+}
+.login{
+    cursor: pointer;
+}

@@ -1,0 +1,17 @@
+.main {
+    margin-top: 10px;
+    width: 66%;
+    margin: auto;
+}
+
+.submit {
+    margin-right: 10px;
+}
+
+.text-error {
+    color: red;
+}
+
+.table{
+    margin-top: 50px;
+}

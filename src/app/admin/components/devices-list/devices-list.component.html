@@ -1,0 +1,104 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="page-container" id="page-content">
+        <!--Search Bar-->
+        <div class="container">
+            <div class="row height d-flex justify-content-center align-items-center">
+                <div class="col-md-8">
+                    <div class="search">
+                        <i class="fa fa-search"></i>
+                        <input type="text" class="form-control" (keyup)="filterData()" [(ngModel)]="searchKey"  placeholder="Search Employee...">
+
+                        <form>
+                            <button class="btn btn-primary">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Device Information-->
+        <div class="padding">
+            <div class="row ml-5 container d-flex justify-content-start">
+                <div class=" col-xl-4 col-md-12" *ngFor="let items of devicesList">
+                    <div class="card user-card-full">
+                        <div class="row m-l-0 m-r-0">
+                            <div class="col-sm-4 bg-c-lite-green user-profile">
+                                <div class="card-block text-center text-white">
+                                    <div class="m-b-25">
+                                        <img src="https://thumbs.dreamstime.com/b/laptop-icon-laptop-icon-white-background-133509399.jpg"
+                                            class="img-radius" alt="User-Profile-Image">
+                                    </div>
+                                    <h6 class="f-w-600 headers">{{items.name}}</h6>
+
+                                    <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="card-block">
+                                    <h6 class="ml-2 m-b-20 p-b-5 b-b-default f-w-600">Information
+                                        <a routerLink="/devices-edit/{{items.id}}">
+                                            <i class="fa fa-edit edit"></i></a>
+                                        <i class="ml-2 fa fa-trash-o" (click)="delete(items.id)"></i>
+                                    </h6>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600 headers">Device Type</p>
+                                            <h6 class="text-muted f-w-400 text">{{items.device_type}}</h6>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600 headers">OS</p>
+                                            <h6 class="text-muted f-w-400 text">{{items.os}}</h6>
+                                        </div><br><br>
+                                        <div class="col-sm-12">
+                                            <p class="m-b-10 f-w-600 headers">Service Tag</p>
+                                            <h6 class="text-muted f-w-400 text">{{items.service_tag}}</h6>
+                                        </div>
+                                    </div>
+                                    <!--Devices Assigned-->
+                                    <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600 ">Devices Assigned</h6>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="m-b-10 f-w-600 headers pointer">Assigned to
+                                                <a routerLink="/assign-device/{{items.id}}">
+                                                <i class="fa fa-plus plus color-blue pointer"
+                                                    *ngIf="!items.employee?.name"></i></a>
+                                            </div>
+                                            <h6 class="text-muted f-w-400 text">{{items.employee?.name}}</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600 ">Devices Assigned</h6>
+                <div class="row">
+                    <div class="col-sm-12" *ngFor="let item of devicesEmployee">
+                        <p class="m-b-10 f-w-600 headers">Assigned to</p>
+                        <h6 class="text-muted f-w-400 text">{{item.employee.name}}</h6>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+    </div>
+</body>
+<app-sidebarnav></app-sidebarnav>

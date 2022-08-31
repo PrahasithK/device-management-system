@@ -1,0 +1,82 @@
+<div class="container-fluid main">
+    <div class="row">
+        <div class="col-lg-12 table">
+            <div class="card">
+                <div class="card-body">
+                    <h4>Add Employee</h4>
+                    <!-- form -->
+                    <form [formGroup]="addEmployeeForm">
+                        <div>
+                            <label>Name :</label>
+                            <input type=" text" class="form-control" formControlName="name" placeholder="Enter Name">
+                            <div *ngIf="f.name.touched && f.name.invalid">
+                                <div class="text-error" *ngIf="f.name.errors.required">Name is Required</div>
+                            </div>
+                        </div><br />
+
+                        <div>
+                            <label>Email:</label>
+                            <input type="text" class="form-control" formControlName="email" placeholder="Enter Email">
+                            <div *ngIf="f.email.touched && f.email.invalid">
+                                <div class="text-error" *ngIf="f.email.errors.required">Email is Required
+                                </div>
+                            </div>
+                        </div><br />
+                        <div>
+                            <label>Phone Number :</label>
+                            <input type="text" class="form-control" formControlName="phone_number"
+                                placeholder="Enter Phone Number">
+                            <div *ngIf="f.phone_number.touched && f.phone_number.invalid">
+                                <div class="text-error" *ngIf="f.phone_number.errors.required">Phone Number is Required
+                                </div>
+
+                            </div>
+                        </div><br />
+                        <div>
+                            <label>Designation :</label>
+                            <input type="text" class="form-control" formControlName="designation"
+                                placeholder="Enter Designation">
+                            <div *ngIf="f.designation.touched && f.designation.invalid">
+                                <div class="text-error" *ngIf="f.designation.errors.required">Designation is Required
+                                </div>
+                            </div>
+                        </div><br />
+                        <div>
+                            <label>Role :</label>
+                            <ng-select [items]="roles" [multiple]="true" bindLabel="role" bindValue="id"
+                                formControlName="roles">
+                            </ng-select>
+                            
+                            <div *ngIf="f.roles.touched && f.roles.invalid">
+                                <div class="text-error" *ngIf="f.roles.errors.required">Role is Required
+                                </div>
+                            </div>
+                        </div><br />
+
+                        <div>
+                            <label>EMP ID :</label>
+                            <input type="text" class="form-control" formControlName="emp_id" placeholder="Enter EMP ID">
+
+                        </div><br />
+
+                        <div>
+                            <label>Devices :</label>
+                            <input type="text" class="form-control" formControlName="devices"
+                                placeholder="Enter Devices">
+
+                        </div><br />
+                        <div style="float: right;">
+                            <button (click)="submit()" class="btn btn-primary submit">Submit</button>
+                            <button (click)="cancel()" class="btn btn-secondary">Cancel</button>
+                        </div>
+
+                        <p class="text-error">{{error}}</p>
+                    </form>
+                    <!-- end form -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-sidebarnav></app-sidebarnav>

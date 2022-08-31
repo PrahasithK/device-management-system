@@ -1,0 +1,70 @@
+<div class="container-fluid main">
+    <div class="row">
+        <div class="col-lg-12 table">
+            <div class="card">
+                <div class="card-body">
+                    <h4>Add Devices</h4>
+                    <!-- form -->
+                    <form [formGroup]="addDevicesForm">
+                        <div>
+                            <label>Name :</label>
+                            <input type="text" class="form-control" formControlName="name" placeholder="Enter Name">
+                            <div *ngIf="f.name.touched && f.name.invalid">
+                                <div class="text-error" *ngIf="f.name.errors.required">Name is Required</div>
+                            </div>
+                        </div><br />
+                        <div>
+                            <label>Assigned To :</label>
+                            <input type="text" class="form-control" formControlName="employee_id"
+                                placeholder="Enter Name">
+                            <div *ngIf="f.employee_id.touched && f.employee_id.invalid">
+                                <div class="text-error" *ngIf="f.employee_id.errors.required">Assigned To Required
+                                </div>
+                            </div>
+                        </div><br />
+                        <div>
+                            <label>Device Type :</label>
+                            <select class="form-control" formControlName="device_type" placeholer="Select Devices Type">
+
+                                <option>Laptop</option>
+                                <option>Bag</option>
+                                <option>Charger</option>
+                            </select>
+
+                            <div *ngIf="f.device_type.touched && f.device_type.invalid">
+                                <div class="text-error" *ngIf="f.device_type.errors.required">Device Type is Required
+                                </div>
+                            </div>
+                        </div><br />
+
+                        <div>
+                            <label>OS :</label>
+                            <input type="text" class="form-control" formControlName="os" placeholder="Enter OS">
+
+                        </div><br />
+                        <div>
+                            <label>Service Tag :</label>
+                            <input type="text" class="form-control" formControlName="service_tag"
+                                placeholder="Enter Service Tag">
+                            <div *ngIf="f.service_tag.touched && f.service_tag.invalid">
+                                <div class="text-error" *ngIf="f.service_tag.errors.required">Service Tag is Required
+                                </div>
+
+                            </div>
+                        </div><br />
+                        <div style="float: right;">
+                            <button (click)="submit()" class="btn btn-primary submit">Submit</button>
+                            <button (click)="cancel()" class="btn btn-secondary">Cancel</button>
+                        </div>
+
+                        <p class="text-error">{{error}}</p>
+                    </form>
+                    <!-- end form -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<app-sidebarnav></app-sidebarnav>

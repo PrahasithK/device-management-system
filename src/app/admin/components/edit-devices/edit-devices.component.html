@@ -1,0 +1,53 @@
+<div class="container-fluid main">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4>Update Devices</h4>
+                    <!-- form -->
+                    <form [formGroup]="addDeviceForm">
+                        <div>
+                            <label>Name :</label>
+                            <input type=" text" class="form-control" formControlName="name" placeholder="Enter Name">
+                            
+                        </div><br />
+
+                        <div>
+                            <label>Device Type:</label>
+                            <input type="text" class="form-control" formControlName="device_type" placeholder="Enter Email">
+                           
+                        </div><br />
+                        <div>
+                            <label>os :</label>
+                            <input type="text" class="form-control" formControlName="os"
+                                placeholder="Enter Phone Number">
+                           
+                        </div><br />
+                        <div>
+                            <label>service_tag :</label>
+                            <input type="text" class="form-control" formControlName="service_tag"
+                                placeholder="Enter Designation">
+                            
+                        </div><br />
+
+                      
+                        <div>
+                            <label>Employee ID :</label>
+                            <input type="text" class="form-control" formControlName="employee_id" placeholder="Enter EMP ID">
+                           
+                        </div><br/>
+                        
+                        <div style="float: right;">
+                            <button (click)="updateDevice()"  class="btn btn-primary submit">Submit</button>
+                            <button (click)="cancel()" class="btn btn-secondary">Cancel</button>
+                        </div>
+
+                        <!-- <p class="text-error">{{error}}</p> -->
+                    </form>
+                    <!-- end form -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
